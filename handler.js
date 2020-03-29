@@ -81,6 +81,17 @@ module.exports.github = async event => {
     }, []
   )
   
+  const BLOCK_COUNT = 45
+  const slackMessages = groupIssuesIntoMessages(issuesArray, BLOCK_COUNT)
+
+  slackMessages.map(message => {
+    fetch(responseURL, {
+      method: 'post',
+      body: JSON.stringify(message),
+      headers: {'Content-Type': 'application/json'}
+    })
+  })
+  
   return {
     statusCode: 200,
     headers: {
