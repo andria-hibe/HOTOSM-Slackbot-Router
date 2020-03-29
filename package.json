@@ -1,0 +1,27 @@
+{
+  "name": "HOTOSM-Router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "serverless": "^1.67.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "serverless deploy -v",
+    "invoke": "serverless invoke -f github -l",
+    "logs": "serverless logs -f github"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andria-hibe/HOTOSM-Router.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andria-hibe/HOTOSM-Router/issues"
+  },
+  "homepage": "https://github.com/andria-hibe/HOTOSM-Router#readme"
+}
