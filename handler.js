@@ -38,13 +38,19 @@ function parseBody (body) {
   return bodyObject
 }
 
+function parseURL (url) {
+  const colon = /%3A/gi
+  const backslash = /%2F/gi
+
+  return url.replace(colon, ':').replace(backslash, '/')
+}
+
 module.exports.github = async event => {
   const body = parseBody(event.body)
+  const responseURL = parseURL(body.response_url)
 
   const githubResponse = await fetch(GITHUB_URL)
-    console.log(`github response: ${githubResponse}`)
   const githubJSON = await githubResponse.json()
-    console.log(`github JSON: ${githubJSON}`)
 
   const issuesArray = githubJSON.reduce(
     (accumulator, issue) => {
@@ -74,22 +80,12 @@ module.exports.github = async event => {
       return accumulator
     }, []
   )
-
-  console.log(`issues array after reduce: ${(groupIssuesIntoMessages(issuesArray, 45))}`)
-
-  return { //example
+  
+  return {
     statusCode: 200,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": true
     },
-    body: JSON.stringify(
-      {
-        message: "Go Serverless v1.0! Your function executed successfully!",
-        input: event
-      },
-      null,
-      2
-    )
-  };
-};
+  }
+}
