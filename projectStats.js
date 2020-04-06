@@ -97,8 +97,6 @@ module.exports.projectStats = async event => {
     ]
   }
 
-  console.log(slackMessage)
-
   return {
     statusCode: 200,
     headers: {
