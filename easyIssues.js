@@ -45,7 +45,7 @@ function parseURL (url) {
   return url.replace(colon, ':').replace(backslash, '/')
 }
 
-module.exports.github = async event => {
+module.exports.easyIssues = async event => {
   const body = parseBody(event.body)
   const responseURL = parseURL(body.response_url)
 

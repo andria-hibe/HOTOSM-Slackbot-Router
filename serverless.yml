@@ -8,7 +8,7 @@ region: us-east-1
 
 functions:
   github:
-    handler: handler.github
+    handler: easyIssues.easyIssues
     events:
       - http:
           path: api/github
