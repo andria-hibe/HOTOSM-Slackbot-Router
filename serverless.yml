@@ -21,3 +21,10 @@ functions:
           path: api/healthcheck
           method: post
           cors: true
+  projectStats:
+    handler: projectStats.projectStats
+    events:
+      - http:
+          path: api/projectstats
+          method: post
+          cors: true
