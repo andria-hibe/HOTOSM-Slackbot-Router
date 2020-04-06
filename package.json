@@ -10,6 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "deploy": "serverless deploy -v",
+    "deployfunction": "sls deploy function -f",
     "invoke": "serverless invoke -f github -l",
     "logs": "serverless logs -f github"
   },
