@@ -7,10 +7,17 @@ stage: dev
 region: us-east-1
 
 functions:
-  github:
+  easyIssues:
     handler: easyIssues.easyIssues
     events:
       - http:
-          path: api/github
+          path: api/easyissues
           method: post
           cors: true
+  healthCheck:
+    handler: healthCheck.healthCheck
+    events:
+      -http:
+        path: api/healthcheck
+        method: post
+        cors: true
