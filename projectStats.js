@@ -33,7 +33,6 @@ module.exports.projectStats = async event => {
     organisationTag, 
     campaignTag, 
     mapperLevel, 
-    status, 
     percentMapped, 
     percentValidated
   } = taskingManagerJSON
@@ -96,8 +95,6 @@ module.exports.projectStats = async event => {
       }
     ]
   }
-
-  console.log(slackMessage)
 
   return {
     statusCode: 200,
