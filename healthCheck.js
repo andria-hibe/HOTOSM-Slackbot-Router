@@ -35,8 +35,6 @@ module.exports.healthCheck = async event => {
     ]
   }
 
-  console.log(`message: ${slackMessage}`)
-
   return {
     statusCode: 200,
     headers: {
