@@ -17,7 +17,7 @@ functions:
   healthCheck:
     handler: healthCheck.healthCheck
     events:
-      -http:
-        path: api/healthcheck
-        method: post
-        cors: true
+      - http:
+          path: api/healthcheck
+          method: post
+          cors: true
