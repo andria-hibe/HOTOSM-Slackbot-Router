@@ -42,7 +42,8 @@ module.exports.projectStats = async event => {
     campaignTag, 
     mapperLevel, 
     percentMapped, 
-    percentValidated
+    percentValidated,
+    status
   } = taskingManagerJSON
   
   const slackMessage = {
@@ -74,7 +75,7 @@ module.exports.projectStats = async event => {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `${shortDescription}`
+          text: `*${status}* - ${shortDescription}`
         }
       },
           {
