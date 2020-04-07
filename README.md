@@ -2,9 +2,9 @@
 Contribution to Outreachy Project for Humanitarian OpenStreetMap - Build a Slackbot Router
 
 ### Commands:
-- /tm-good-first-issue - returns issues in the Tasking Manager GitHub repo with the ‘Difficulty: Easy’ label
-- /tm-stats (project ID) - returns stats about the specified HOT project on Tasking Manager
-- /tm-health - returns the current status of the Tasking Manager
+- `/tm-good-first-issue` - returns issues in the Tasking Manager GitHub repo with the ‘Difficulty: Easy’ label
+- `/tm-stats (project ID)` - returns stats about the specified HOT project on Tasking Manager
+- `/tm-health` - returns the current status of the Tasking Manager
 ---
 ## Setup
 1. After cloning this repo:
