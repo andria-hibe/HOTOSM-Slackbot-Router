@@ -24,11 +24,11 @@ Contribution to Outreachy Project for Humanitarian OpenStreetMap - Build a Slack
 2. Name your app and choose the desired Slack Workspace you want to use your app in.
 3. Under **Features**, choose **Slash Commands** and click **Create New Command**.
 4. Fill out the details. Under the *Request URL* field, paste the `ServiceEndpoint` URL you copied earlier. Save your changes.
-5. Make sure the app is installed in your workspace (under Basic Information, **Add features and functionality* and *Install your app to your workspace** should have a checkmark.
-6. Head to your chosen Slack workspace and try out your new command.
+5. Make sure the app is installed in your workspace (under Basic Information, **Add features and functionality* and *Install your app to your workspace** should have a checkmark).
+6. Head to your chosen Slack workspace and try out any of the implemented Slack Commands.
 
 ## Demo
-You can join a workspace that already has a Slack App with the Slack Commands installed using [this link](https://join.slack.com/t/andriasworkspace/shared_invite/zt-cyo248fa-bnUfvNRp6oZCOelOa1Vpkw).
+You can also instead join a workspace that already has a Slack App with the Slack Commands installed using [this link](https://join.slack.com/t/andriasworkspace/shared_invite/zt-cyo248fa-bnUfvNRp6oZCOelOa1Vpkw).
 
 
 ---
