@@ -21,7 +21,7 @@ module.exports.projectStats = async event => {
   const body = parseBody(event.body)
   const projectID = body.text
   const taskingManagerURL = `https://tasks.hotosm.org/api/v1/project/${projectID}/summary`
-
+  const projectURL = `https://tasks.hotosm.org/project/${projectID}`
   const taskingManagerResponse = await fetch(taskingManagerURL)
   const taskingManagerJSON = await taskingManagerResponse.json()
 
@@ -59,7 +59,7 @@ module.exports.projectStats = async event => {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `*#${projectId} - ${name}*`
+          text: `<${projectURL}|${projectId} - ${name}*>`
         }
       },
       {
