@@ -29,6 +29,8 @@ Contribution to Outreachy Project for Humanitarian OpenStreetMap - Build a Slack
 
 ## Demo
 You can join a workspace that already has a Slack App with the Slack Commands installed using [this link](https://join.slack.com/t/andriasworkspace/shared_invite/zt-cyo248fa-bnUfvNRp6oZCOelOa1Vpkw).
+
+
 ---
 ### Resources:
 - [Serverless (AWS Provider) Docs](https://serverless.com/framework/docs/providers/aws/)
@@ -36,4 +38,3 @@ You can join a workspace that already has a Slack App with the Slack Commands in
 - [GitHub API Docs](https://developer.github.com/v3/)
 - [Tasking Manager API Docs](https://tasks.hotosm.org/api-docs)
 - [OSMCha API Docs](https://osmcha.org/api-docs/)
-
