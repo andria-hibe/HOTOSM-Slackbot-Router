@@ -36,7 +36,7 @@ module.exports.easyIssues = async (event) => {
   const githubJSON = await githubResponse.json()
 
   const issuesArray = githubJSON.reduce((accumulator, issue) => {
-    const issueURL = 'https://' + issue.url.slice(12, 23) + issue.url.slice(29) // convert API URL to Tasking Manager website URL
+    const issueURL = 'https://' + issue.url.slice(12, 23) + issue.url.slice(29) // convert API URL to GitHub repo URL
 
     accumulator.push(
       {
