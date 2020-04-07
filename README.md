@@ -26,6 +26,9 @@ Contribution to Outreachy Project for Humanitarian OpenStreetMap - Build a Slack
 4. Fill out the details. Under the *Request URL* field, paste the `ServiceEndpoint` URL you copied earlier. Save your changes.
 5. Make sure the app is installed in your workspace (under Basic Information, **Add features and functionality* and *Install your app to your workspace** should have a checkmark.
 6. Head to your chosen Slack workspace and try out your new command.
+
+## Demo
+You can join a workspace that already has a Slack App with the Slack Commands installed using [this link](https://join.slack.com/t/andriasworkspace/shared_invite/zt-cyo248fa-bnUfvNRp6oZCOelOa1Vpkw).
 ---
 ### Resources:
 - [Serverless (AWS Provider) Docs](https://serverless.com/framework/docs/providers/aws/)
