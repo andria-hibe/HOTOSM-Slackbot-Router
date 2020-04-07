@@ -4,25 +4,15 @@ const fetch = require('node-fetch')
 
 const TM_URL = 'https://tasks.hotosm.org/api/health-check'
 
-const slackBlock = (status) => {
-  if (status === 'healthy') {
+const createBlock = (status) => {
     return {
 			type: "section",
 			text: {
 				type: "mrkdwn",
-				text: ":white_check_mark: The Tasking Manager is currently operational"
-			}
-		}
-  } else {
-    return {
-			type: "section",
-			text: {
-				type: "mrkdwn",
-				text: ":heavy_exclamation_mark: The Tasking Manager cannot be reached right now"
+				text: (status === 'healthy' ? ":white_check_mark: The Tasking Manager is operational" : ":heavy_exclamation_mark: The Tasking Manager cannot be reached" )
 			}
 		}
   }
-}
 
 module.exports.healthCheck = async event => {
   const taskingManagerResponse = await fetch(TM_URL)
@@ -31,7 +21,7 @@ module.exports.healthCheck = async event => {
 
   const slackMessage = {
     blocks: [
-      slackBlock(status)
+      createBlock(status)
     ]
   }
 
