@@ -28,3 +28,6 @@ Contribution to Outreachy Project for Humanitarian OpenStreetMap - Build a Slack
 ### Resources:
 - [Serverless (AWS Provider) Docs](https://serverless.com/framework/docs/providers/aws/)
 - [Slack API Docs](https://api.slack.com/#read_the_docs)
+- [GitHub API Docs](https://developer.github.com/v3/)
+- [Tasking Manager API Docs](https://tasks.hotosm.org/api-docs)
+- [OSMCha API Docs](https://osmcha.org/api-docs/)
