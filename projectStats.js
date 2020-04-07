@@ -20,10 +20,18 @@ function parseBody (body) {
 module.exports.projectStats = async event => {
   const body = parseBody(event.body)
   const projectID = body.text
+
   const taskingManagerURL = `https://tasks.hotosm.org/api/v1/project/${projectID}/summary`
   const projectURL = `https://tasks.hotosm.org/project/${projectID}`
+
   const taskingManagerResponse = await fetch(taskingManagerURL)
   const taskingManagerJSON = await taskingManagerResponse.json()
+
+  for (const data in taskingManagerJSON) {
+    if (taskingManagerJSON[data] === null) {
+      taskingManagerJSON[data] = 'N/A'
+    }
+  }
 
   const {
     projectPriority, 
