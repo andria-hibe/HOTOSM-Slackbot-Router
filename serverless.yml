@@ -28,10 +28,10 @@ functions:
           path: api/projectstats
           method: post
           cors: true
-  slackWelcome:
-    handler: slackWelcome.slackWelcome
-      events:
-        - http:
-            path: api/slackwelcome
-            method: post
-            cors: true
+  slackEvents:
+    handler: slack-events/events.events
+    events:
+      - http:
+          path: api/slackevents
+          method: post
+          cors: true
