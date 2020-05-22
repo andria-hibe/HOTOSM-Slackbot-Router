@@ -1,6 +1,6 @@
 "use strict"
 
-module.exports.events = async event => {
+module.exports.slackEvents = async event => {
   const challenge = JSON.parse(event.body.challenge)
 
   return {
