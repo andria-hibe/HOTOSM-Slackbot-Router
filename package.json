@@ -5,7 +5,7 @@
   "main": "handler.js",
   "dependencies": {
     "node-fetch": "^2.6.0",
-    "serverless": "^1.67.0"
+    "serverless": "^1.71.3"
   },
   "devDependencies": {},
   "scripts": {
