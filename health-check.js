@@ -53,26 +53,36 @@ module.exports.healthCheck = async (event) => {
   const body = parseBody(event.body)
   const responseURL = decodeURIComponent(body.response_url)
 
-  const taskingManagerStatus = await fetch(TM_STATUS_URL)
-  const statusJSON = await taskingManagerStatus.json()
-  const status = statusJSON.status
+  try {
+    const taskingManagerStatus = await fetch(TM_STATUS_URL)
+    const statusJSON = await taskingManagerStatus.json()
+    const status = statusJSON.status
 
-  const taskingManagerStatistics = await fetch(TM_STATISTICS_URL)
-  const statisticsJSON = await taskingManagerStatistics.json()
-  const { mappersOnline, totalProjects } = statisticsJSON
+    const taskingManagerStatistics = await fetch(TM_STATISTICS_URL)
+    const statisticsJSON = await taskingManagerStatistics.json()
+    const { mappersOnline, totalProjects } = statisticsJSON
 
-  const slackMessage = {
-    response_type: 'ephemeral',
-    blocks: createBlock(status, mappersOnline, totalProjects),
-  }
+    const slackMessage = {
+      response_type: 'ephemeral',
+      blocks: createBlock(status, mappersOnline, totalProjects),
+    }
 
-  fetch(responseURL, {
-    method: 'post',
-    body: JSON.stringify(slackMessage),
-    headers: { 'Content-Type': 'application/json' },
-  })
+    fetch(responseURL, {
+      method: 'post',
+      body: JSON.stringify(slackMessage),
+      headers: { 'Content-Type': 'application/json' },
+    })
 
-  return {
-    statusCode: 200,
+    return {
+      statusCode: 200,
+    }
+  } catch (error) {
+    console.error(error)
+
+    fetch(responseURL, {
+      method: 'post',
+      body: JSON.stringify('Something went wrong with your request'),
+      headers: { 'Content-Type': 'application/json' },
+    })
   }
 }
