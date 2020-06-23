@@ -52,7 +52,7 @@ const createBlock = (
 }
 
 module.exports.handler = async (event) => {
-  const body = parseBody(event)
+  const body = parseBody(event.body)
   const responseURL = decodeURIComponent(body.response_url)
   const projectID = body.text
 
