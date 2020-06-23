@@ -8,30 +8,30 @@ region: us-east-1
 
 functions:
   easyIssues:
-    handler: easy-issues.easyIssues
+    handler: easy-issues.handler
     events:
       - http:
           path: api/easyissues
           method: post
           cors: true
   healthCheck:
-    handler: health-check.healthCheck
+    handler: health-check.handler
     events:
       - http:
           path: api/healthcheck
           method: post
           cors: true
   projectStats:
-    handler: project-stats.projectStats
+    handler: project-stats.handler
     events:
       - http:
           path: api/projectstats
           method: post
           cors: true
-  slackEvents:
-    handler: slack-events/slackEvents
+  osmchaSuspect:
+    handler: osmcha-suspect.handler
     events:
       - http:
-          path: api/slackevents
+          path: api/osmchasuspect
           method: post
           cors: true
