@@ -26,7 +26,7 @@ function groupIssuesIntoMessages(array, size) {
   })
 }
 
-module.exports.easyIssues = async (event) => {
+module.exports.handler = async (event) => {
   const body = parseBody(event.body)
   const responseURL = decodeURIComponent(body.response_url)
   console.log(`URL: ${body.response_url}`)

@@ -16,7 +16,7 @@ const createSlackResponse = (blocks) => {
   }
 }
 
-module.exports.projectStats = async (event) => {
+module.exports.handler = async (event) => {
   const body = parseBody(event.body)
   const projectID = body.text
 
